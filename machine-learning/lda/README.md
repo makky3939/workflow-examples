@@ -35,6 +35,9 @@ The input table of LDA training will be as follows:
 # push workflow to TD
 $ td wf push lda_wf
 
+# set td api key for python code
+$ td wf secrets --project lda_wf --set python_apikey
+
 # run workflow
 $ td wf start lda_wf lda --session now
 ```

@@ -18,3 +18,5 @@ japanese: false
 
 # whether to use TF-IDF for feature vector
 tfidf: true
+
+python_endpoint: 'https://api.treasuredata.com/'

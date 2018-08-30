@@ -50,3 +50,18 @@ _export:
   +predict_topics:
     td>: queries/predict_lda.sql
     create_table: predicted_topics
+
++post_predict:
+  _parallel: true
+
+  +dimension_reduction:
+    py>: tasks.DimensionReduction.jspca
+    docker:
+      image: "python:3.6.5"
+    _env:
+      python_apikey: ${secret:python_apikey}
+
+  +topic_proportion:
+    td>: queries/topic_proportion.sql
+    create_table: topic_proportion
+    engine: presto
